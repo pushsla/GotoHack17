@@ -22,7 +22,6 @@ def initialise(name):
     for i in range(len(data)):
         for s in range(len(data[i])):
             data[i][s] = data[i][s].split('\n')[0]
-    return data
 
 
 def get_status(id_):
@@ -59,7 +58,7 @@ def start(message):
     global string, i, x
     if truth[1] == True and (message.text.lower() == "да" or i == 1):
         bot.send_message(message.chat.id, "Здравствуй, у меня есть для тебя заказ. Сообщи свои данные чтобы я мог назначить тебя подальше от врагов.")
-        bot.send_message(message.chat.id, "Назови своё имя (английскими буквами):")
+        bot.send_message(message.chat.id, "Назови своё имя:")
         truth[1] = False
         truth[2] = True
     elif truth[1] == True and message.text.lower() == "нет":
@@ -141,49 +140,37 @@ def start(message):
 @bot.callback_query_handler(func=lambda call: True)
 def CALL(call):
     if truth[5] == True:
-        if call.message:
-            if call.data == "1":
-                D = 1
-                print(D)
-            if call.data == "2":
-                D = 2
-                print(D)
-            if call.data == "3":
-                D = 3
-                print(D)
-            if call.data == "4":
-                D = 4
-                print(D)
+        while True:
+            if call.message:
+                d = call.data
+                break
+        print(d)
         truth[5] = False
         truth[7] = True
     elif   truth[4] == True:
-        if call.message:
-            if call.data == "1":
-                D = 1
-                print(D)
-            if call.data == "2":
-                D = 2
-                print(D)
+        d = '0'
+        while True:
+            if call.message:
+                d = call.data
+                break
+        print(d)
         truth[4] = False
         truth[8] = True
     elif truth [3] == True:
-        if call.message:
-            if call.data == "1":
-                D = 1
-                print(D)
-            if call.data == "2":
-                D = 2
-                print(D)
+        while True:
+            if call.message:
+                d = call.data
+                break
+        print(d)
         truth[3] = False
         truth[9] = True
     elif truth [2] == True:
-        if call.message:
-            if call.data == "1":
-                D = 1
-                print(D)
-            if call.data == "2":
-                D = 2
-                print(D)
+        while True:
+            if call.message:
+                d = call.data
+                break
+        print(d)
         truth[2] = False
-        truth[0] = 
+        truth[0] = True
+
 bot.polling(none_stop=True)
