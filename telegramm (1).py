@@ -45,7 +45,9 @@ def write_data(name):
     global data
     fil = open(name, 'w')
     for i in data:
-        st = str(i[0])+','+str(i[1])+','+str(i[2])+'\n'
+        st = ''
+        for bi in i:
+            st+=(bi+',')
         fil.write(st)
     fil.close()
 
