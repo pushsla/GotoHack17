@@ -48,7 +48,7 @@ def write_data(name):
         st = ''
         for bi in i:
             st+=(str(bi)+',')
-        fil.write(st)
+        fil.write(st, '\n')
     fil.close()
 
 x = False
