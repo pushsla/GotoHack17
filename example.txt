@@ -4,7 +4,7 @@
 4,fubar,2,2,0,0,0
 5,slava,1,4,1,1,1
 6,vania,3,1,0,1,0
-7,programmer,2,0,0,1
-8,hanamury,1,1,0,0
-9,alah,4,0,0,0
-10,isuss,3,1,1,1
+7,programmer,1,2,0,0,1
+8,hanamury,3,1,1,0,0
+9,alah,5,4,0,0,0
+10,isuss,2,3,1,1,1
