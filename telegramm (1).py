@@ -56,6 +56,7 @@ def DIRECTION(message):
     if truth[0] == True:
         print("Success!")
         initialise('userset.txt')
+        data.append([])
         bot.send_message(message.chat.id, "Хочешь сыграть в киллера?  Да/Нет")
         truth[0] = False
         
@@ -110,14 +111,15 @@ def start(message):
             truth[i] = True
         else:
             truth[6] = False
-            i += 1 
+            i += 1
+            data[len(data) - 1].append(f)
             truth[i] = True
             bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter) для продолжения...")
             x = True
     elif truth[7] == True:
         keyboard = types.InlineKeyboardMarkup()
         callback_button0 = types.InlineKeyboardButton(text="Да", callback_data="1")
-        callback_button1 = types.InlineKeyboardButton(text="Нет", callback_data="2")
+        callback_button1 = types.InlineKeyboardButton(text="Нет", callback_data="0")
         keyboard.add(callback_button0)
         keyboard.add(callback_button1)
         bot.send_message(message.chat.id, "Играешь в настольный теннис?:", reply_markup=keyboard)
@@ -127,7 +129,7 @@ def start(message):
     elif truth[8] == True:
         keyboard = types.InlineKeyboardMarkup()
         callback_button0 = types.InlineKeyboardButton(text="Да", callback_data="1")
-        callback_button1 = types.InlineKeyboardButton(text="Нет", callback_data="2")
+        callback_button1 = types.InlineKeyboardButton(text="Нет", callback_data="0")
         keyboard.add(callback_button0)
         keyboard.add(callback_button1)
         bot.send_message(message.chat.id, "Играешь в футбол?", reply_markup=keyboard)
@@ -137,7 +139,7 @@ def start(message):
     elif truth[9] == True:
         keyboard = types.InlineKeyboardMarkup()
         callback_button0 = types.InlineKeyboardButton(text="Да", callback_data="1")
-        callback_button1 = types.InlineKeyboardButton(text="Нет", callback_data="2")
+        callback_button1 = types.InlineKeyboardButton(text="Нет", callback_data="0")
         keyboard.add(callback_button0)
         keyboard.add(callback_button1)
         bot.send_message(message.chat.id, "Играешь в волейбол?", reply_markup=keyboard)
@@ -153,6 +155,7 @@ def CALL(call):
                 d = call.data
                 break
         print(d)
+        data[len(data) - 1].append(d)
         truth[5] = False
         truth[7] = True
     elif   truth[4] == True:
@@ -162,6 +165,7 @@ def CALL(call):
                 d = call.data
                 break
         print(d)
+        data[len(data) - 1].append(d)
         truth[4] = False
         truth[8] = True
     elif truth [3] == True:
@@ -170,6 +174,7 @@ def CALL(call):
                 d = call.data
                 break
         print(d)
+        data[len(data) - 1].append(d)
         truth[3] = False
         truth[9] = True
     elif truth [2] == True:
@@ -178,6 +183,7 @@ def CALL(call):
                 d = call.data
                 break
         print(d)
+        data[len(data) - 1].append(d)
         truth[2] = False
         write_data('userset.txt')
         truth[0] = True
