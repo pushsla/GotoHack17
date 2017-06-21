@@ -40,15 +40,15 @@ def add_gamer(nick):
     id_ = len(data)+1
     data.append([id_, nick, 1])
 
-
 def write_data(name):
     global data
     fil = open(name, 'w')
-    for i in data:
-        st = ''
-        for bi in i:
-            st+=(str(bi)+',')
-        fil.write(st, '\n')
+    for i in range(len(data)):
+        for j in range(len(data[i])):
+            fil.write(data[i][j])
+            if j + 1 != len(data[i]):
+                fil.write(",")
+        fil.write('\n')
     fil.close()
 
 x = False
@@ -189,7 +189,7 @@ def CALL(call):
         print(d)
         data[len(data) - 1].append(d)
         truth[2] = False
-        write_data('userset.txt')
         truth[0] = True
+        write_data('userset.txt')
 
 bot.polling(none_stop=True)
