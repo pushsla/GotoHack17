@@ -8,3 +8,11 @@
 1,rage,1
 1,rage,1
 1,whale,1
+1,rage,1
+1,кфпу,1
+23,gnome,1
+1,letsmakefuckingnoise,1
+23,eeyore,1
+1,robot,1
+23,fog,1
+23,кфпу,1

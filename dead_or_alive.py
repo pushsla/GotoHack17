@@ -28,43 +28,23 @@ f.close()
 
 f = open('data.txt', 'r')
 
-a = int(input("Input ID for information of life status :"))
-for id_2 in range(0, len_):
-    print("Here's your life status - {text}".format(text = life_status))
+#a = int(input("Input ID for information of life status :"))
+#for id_2 in range(0, len_):
+    #print("Here's your life status - {text}".format(text = life_status))
 
-#f = open('data.txt', 'r')
-#file = f.readlines()
-#parsed = []
-#n = 0s
-#for string in file:
-#    parsed.append(string.split(','))
-#print("")
-#for i in range(len(parsed) - 1):
-#    if parsed[i + 1][2] > parsed[i][2]:
-#        for j in range(i + 1, 0, -1):
-#            if parsed[j][2] > parsed[j - 1][2]:
-#                m = parsed[j - 1]
-#                parsed[j - 1] = parsed[j]
-#                parsed[j] = m
-#for number in range(len(parsed)):
-#    for i in range(len(parsed[number])):
-#        print(parsed[number][i], end='')
-#        if i + 1 != len(parsed[number]):
-#            print(", ", end = '')
-#        else: print("")
-#f.close()
-#f = open('data.txt', 'w')
-#for number in range(len(parsed)):
-#    f.write(str(parsed[number][0]))
-#    f.write(",")
-#    f.write(str(parsed[number][1]))
-#    f.write(",")
-#    f.write(str(parsed[number][2]))
-#    f.write("\n")
-#f.close()
+print("What characteristics do you want to change?")
 
-#'''Он выдает в переменную parsed массив, в котором
-#элементами являются массивы [id,nickname,status]
-#'''
+b = input("")
+if b == "ID":
+    id_1.insert(1, 1488)
+    print("{text}".format(text = id_1))
+if b == "nickname":
+    nickname.insert(1, "wabbalubbadubdub")
+    print("{text}".format(text = nickname))
+if b == "life status":
+    life_status = 0
+    print("{text}".format(text = life_status))
+
+
 
 
