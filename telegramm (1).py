@@ -47,7 +47,7 @@ def write_data(name):
     for i in data:
         st = ''
         for bi in i:
-            st+=(bi+',')
+            st+=(str(bi)+',')
         fil.write(st)
     fil.close()
 
@@ -55,11 +55,14 @@ x = False
 
 @bot.message_handler(commands=["start"])
 def DIRECTION(message):
+    global truth
     if truth[0] == True:
         print("Success!")
         initialise('userset.txt')
         data.append([])
+        data[len(data) - 1].append(str(len(data)))
         bot.send_message(message.chat.id, "Хочешь сыграть в киллера?  Да/Нет")
+        truth = [True, True, False, False, False, False, False, False, False, False, False, False, False, False, False]
         truth[0] = False
         
 @bot.message_handler(content_types=["text"])
@@ -80,7 +83,6 @@ def start(message):
         truth[2] = False
         truth[6] = True
     elif truth[3] == True:
-        add_gamer(string)
         bot.send_message(message.chat.id, "Номер комнаты:")
         truth[3] = False
         truth[4] = True
@@ -104,7 +106,6 @@ def start(message):
         bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter) для продолжения...")
     elif truth[6] == True:
         f = message.text
-        print(f)
         if f != string:
             bot.send_message(message.chat.id, "Не совпадают, повтори операцию...")
             bot.send_message(message.chat.id, "Нажмите на любую кнопку (+ enter)...")
@@ -115,6 +116,7 @@ def start(message):
             truth[6] = False
             i += 1
             data[len(data) - 1].append(f)
+            print(f)
             truth[i] = True
             bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter) для продолжения...")
             x = True
