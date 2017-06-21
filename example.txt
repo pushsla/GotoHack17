@@ -8,3 +8,9 @@
 8,jgeek,10,1,0,1,1
 9,whatisit,7,2,0,0,1
 10,why is this harder then usual project?,1,4,1,1,0
+11,hello,34,1,1,1,1
+12,hi worlder scroo,7,2,0,0,0
+13,hell in hell,10,2,1,1,1
+14,laninja,10,4,0,0,0
+15,heuristics,10,3,1,0,1
+16,salam aleikum,35,1,0,0,0
