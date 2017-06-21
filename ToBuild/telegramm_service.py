@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import telebot
 from telebot import types
 
@@ -51,7 +52,7 @@ def DIRECTION(message):
         print("Succes!")
         bot.send_message(message.chat.id, "Хочешь сыграть в киллера?  Да/Нет")
         truth[0] = False
-        
+
 def exactly(message, string, f, i):
     print (f)
     bot.send_message(message.chat.id, "Подтверди...")
@@ -62,7 +63,7 @@ def exactly(message, string, f, i):
         bot.send_message(message.chat.id, "Не совпадают, повторим операцию...")
         truth[i] = False
         truth[i-1] = True
-    else: 
+    else:
         truth[i] = False
         truth[i + 1] = True
     return f
@@ -107,11 +108,11 @@ def start(message):
             bot.send_message(message.chat.id, "Не совпадают, повтори операцию...", "\n", "Нажмите на любую кнопку (+ enter)...")
             i -= 1
             truth[i] = True
-        else: 
-            i += 1 
+        else:
+            i += 1
             truth[i] = True
             bot.send_message(message.chat.id, "Нажмите на любую кнопку (+ enter)...")
-    
+
 
 @bot.callback_query_handler(func=lambda call: True)
 def CALL(call):
@@ -128,5 +129,5 @@ def CALL(call):
         if call.data == "4":
             D = 4
             print(D)
-            
+
 bot.polling(none_stop=True)
