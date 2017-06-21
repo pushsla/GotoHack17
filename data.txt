@@ -1,6 +1,6 @@
-1, fluttershy, 0
-2, pinkiepie, 1
-3, rainbowdash, 0
-4, twilightsparkle, 0
-5, applejack, 1
-6, rarity, 0
+1,rosie,1
+2,ellie,1
+3,richard,1
+4,leonard,1
+5,Sonie,1
+1,1,1
