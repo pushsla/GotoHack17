@@ -20,11 +20,7 @@ for number in range(len):
 
 f.close()
 
-f = open('data.txt', 'r')
-file_readed = f.read()
-f.close()
-f = open('data.txt', 'w')
-f.write()
+
 
 
 
