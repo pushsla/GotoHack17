@@ -1,22 +1,6 @@
-isus in courtyar,whatisit
-fubar or_Alah,vavv0
-elevenponies,salam aleikum
-environment of home,furie
-furie,why is this harder then usual project?
-europe+,elevenponies
-round of Earth,jgeek
-jgeek,europe+
-whatisit,environment of home
-why is this harder then usual project?,hi worlder scroo
-hello,laninja
-hi worlder scroo,heuristics
-hell in hell,vavv5
-laninja,isus in courtyar
-heuristics,vavv3
-salam aleikum,hell in hell
-vavv0,hello
-vavv1,fubar or_Alah
-vavv2,round of Earth
-vavv3,vavv4
-vavv4,vavv1
-vavv5,vavv2
+Екатерина Самохина,Даниил Царьков
+Даниил Царьков,Григорий Морозов
+Илья Николаев,Екатерина Самохина
+Григорий Морозов,Илья Николаев
+Автономова Ксения,Пушкарев Святослав
+Пушкарев Святослав,Екатерина Самохина

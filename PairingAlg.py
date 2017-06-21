@@ -64,7 +64,7 @@ forbidden = []
 nmb = 0
 for killer in weighted_data:
     min_index = None
-    min_d = (len(weighted_data)+1)**(len(weighted_data))**2
+    min_d = (len(weighted_data)+1)**(len(weighted_data))
     for victim in killer:
         if victim <= min_d:
             min_d = victim
@@ -73,14 +73,14 @@ for killer in weighted_data:
     forbid_weight = weighted_data[int(final_data[nmb][min_index])-1]  # Массив весов для чувака, которого мы выбрали в качестве жертвы
     forbid_arr = final_data[int(final_data[nmb][min_index])-1]  # Массив пар для чувака, которого мы выбрали в качестве жертвы
     forbid_index = forbid_arr.index(str(nmb+1))  # Индекс(номер в массиве) чувака, который является киллером вон того ^
-    forbid_weight[forbid_index] = (len(weighted_data)+1)**(len(weighted_data))**2  # Для того, чтобы не было: А убив. Б, а Б убив. А
+    forbid_weight[forbid_index] = (len(weighted_data)+1)**(len(weighted_data))  # Для того, чтобы не было: А убив. Б, а Б убив. А
     weighted_data[int(final_data[nmb][min_index])-1] = forbid_weight  # заносим изменения в таблицу весов
     victimed = final_data[nmb][min_index]  # Все вот это делается для того, чтобы игрок не был жертвой двух киллеров
     for killer in final_data:
         try:
             vic_index = killer.index(victimed)
             kil_index = final_data.index(killer)
-            weighted_data[kil_index][vic_index] = (len(weighted_data)+1)**(len(weighted_data))**2
+            weighted_data[kil_index][vic_index] = (len(weighted_data)+1)**(len(weighted_data))
         except ValueError:
             pass
 
