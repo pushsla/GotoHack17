@@ -4,3 +4,7 @@
 4,leonard,1
 5,Sonie,1
 1,1,1
+1,giantmouse,1
+1,rage,1
+1,rage,1
+1,whale,1
