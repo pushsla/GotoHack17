@@ -1,10 +1,10 @@
-1,isus in courtyar,34,1,1,1,0
-2,fubar or_Alah,12,3,0,1,1
-3,elevenponies,12,2,1,0,1
-4,environment of home,10,2,1,1,0
-5,furie,9,1,0,0,1
-6,europe+,34,3,0,0,0
-7,round of Earth,35,3,1,0,0
-8,jgeek,10,1,0,1,1
-9,whatisit,7,2,0,0,1
-10,why is this harder then usual project?,1,4,1,1,0
+1,dima,1,3,1,0,1
+2,pasha,1,4,0,1,1
+3,dunkan,4,3,0,0,0
+4,fubar,2,2,0,0,0
+5,slava,1,4,1,1,1
+6,vania,3,1,0,1,0
+7,programmer,2,0,0,1
+8,hanamury,1,1,0,0
+9,alah,4,0,0,0
+10,isuss,3,1,1,1
