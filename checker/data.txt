@@ -1,0 +1,5 @@
+1,rosie,1
+2,ellie,0
+3,richard,1
+4,leonard,1
+5,Sonie,1
