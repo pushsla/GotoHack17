@@ -15,6 +15,7 @@ string = '0'
 data = []
 
 def initialise(name):
+    global data
     fil = open(name, 'r')
     data = fil.readlines()
     fil.close()
@@ -25,19 +26,23 @@ def initialise(name):
 
 
 def get_status(id_):
+    global data
     return data[id_][-1]
 
 
 def set_status(id_, st):
+    global data
     data[id_][-1] = st
 
 
 def add_gamer(nick):
+    global data
     id_ = len(data)+1
     data.append([id_, nick, 1])
 
 
 def write_data(name):
+    global data
     fil = open(name, 'w')
     for i in data:
         st = str(i[0])+','+str(i[1])+','+str(i[2])+'\n'
@@ -49,7 +54,8 @@ x = False
 @bot.message_handler(commands=["start"])
 def DIRECTION(message):
     if truth[0] == True:
-        print("Succes!")
+        print("Success!")
+        initialise('userset.txt')
         bot.send_message(message.chat.id, "Хочешь сыграть в киллера?  Да/Нет")
         truth[0] = False
         
@@ -92,11 +98,13 @@ def start(message):
         keyboard.add(callback_button2)
         keyboard.add(callback_button3)
         bot.send_message(message.chat.id, "ВАШЕ НАПРАВЛЕНИЕ:", reply_markup=keyboard)
+        bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter) для продолжения...")
     elif truth[6] == True:
         f = message.text
         print(f)
         if f != string:
-            bot.send_message(message.chat.id, "Не совпадают, повтори операцию...", "\n", "Нажмите на любую кнопку (+ enter)...")
+            bot.send_message(message.chat.id, "Не совпадают, повтори операцию...")
+            bot.send_message(message.chat.id, "Нажмите на любую кнопку (+ enter)...")
             i -= 1
             truth[6] = False
             truth[i] = True
@@ -104,7 +112,7 @@ def start(message):
             truth[6] = False
             i += 1 
             truth[i] = True
-            bot.send_message(message.chat.id, "Нажмите на любую кнопку (+ enter)...")
+            bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter) для продолжения...")
             x = True
     elif truth[7] == True:
         keyboard = types.InlineKeyboardMarkup()
@@ -115,7 +123,7 @@ def start(message):
         bot.send_message(message.chat.id, "Играешь в настольный теннис?:", reply_markup=keyboard)
         truth[7] = False
         truth[4] = True
-        bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter)")
+        bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter) для продолжения...")
     elif truth[8] == True:
         keyboard = types.InlineKeyboardMarkup()
         callback_button0 = types.InlineKeyboardButton(text="Да", callback_data="1")
@@ -125,7 +133,7 @@ def start(message):
         bot.send_message(message.chat.id, "Играешь в футбол?", reply_markup=keyboard)
         truth[8] = False
         truth[3] = True
-        bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter)")
+        bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter) для продолжения...")
     elif truth[9] == True:
         keyboard = types.InlineKeyboardMarkup()
         callback_button0 = types.InlineKeyboardButton(text="Да", callback_data="1")
@@ -135,7 +143,7 @@ def start(message):
         bot.send_message(message.chat.id, "Играешь в волейбол?", reply_markup=keyboard)
         truth[9] = False
         truth[2] = True
-        bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter)")
+        bot.send_message(message.chat.id, "Нажмите любую кнопку (+enter) для продолжения...")
         
 @bot.callback_query_handler(func=lambda call: True)
 def CALL(call):
@@ -171,6 +179,7 @@ def CALL(call):
                 break
         print(d)
         truth[2] = False
+        write_data('userset.txt')
         truth[0] = True
 
 bot.polling(none_stop=True)
